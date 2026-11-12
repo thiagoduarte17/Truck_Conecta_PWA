@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Truck Conecta | Cargas, rotas e motoristas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#123b62">
+  <meta name="description" content="Truck Conecta: gestão de motoristas, cargas, rotas e frota.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="lateral">
+    <a href="#inicio" class="marca"><img src="logo.png" alt="Truck Conecta"></a>
+    <nav id="menu">
+      <a href="#inicio">Início</a>
+      <a href="#motoristas">Motoristas</a>
+      <a href="#cargas">Tipos de carga</a>
+      <a href="#trechos">Distâncias e locais</a>
+      <a href="#frota">Frota</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <p class="rodape">Truck Conecta © 2026<br>(48) 99246-8144</p>
+  </aside>
+
+  <main id="tela"></main>
+
+  <a class="zap" href="https://wa.me/5548992468144?text=Opa%2C%20como%20funciona%20a%20Truck%20Conecta%3F" target="_blank" rel="noopener">Falar no WhatsApp</a>
+
+  <dialog id="dlg"><form id="frm"></form></dialog>
+
+  <script src="script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js")
+          .catch((error) => console.warn("Service Worker não registrado:", error));
+      });
+    }
+  </script>
+</body>
+</html>
